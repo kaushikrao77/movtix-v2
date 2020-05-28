@@ -1,7 +1,7 @@
 import React from "react";
-import Movie from "../components/Movie";
+import Movie from "../components/movie";
 import styles from "../styles/index.module.css";
-import NavB from "../components/NavB";
+import NavB from "../components/navB";
 import fetch from "node-fetch";
 
 export async function getStaticProps() {

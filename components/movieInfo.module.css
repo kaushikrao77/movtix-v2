@@ -1,0 +1,22 @@
+.movieInfo {
+  width: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-content: center;
+}
+.bd {
+  width: 45vw;
+  height: 25vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.text {
+  padding: 2vw;
+  color: white;
+  font-family: "Cabin";
+}
+.text h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}

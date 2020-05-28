@@ -1,11 +1,10 @@
 import Head from "next/head";
 import "../styles/global.css";
-// import { SeatProvider } from "../contexts/seatContext";
+import { SeatProvider } from "../contexts/seatContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    // <SeatProvider>
-    <>
+    <SeatProvider>
       <Head>
         <link
           href="https://fonts.googleapis.com/css?family=Cabin"
@@ -14,7 +13,6 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
-    /* // </SeatProvider> */
+    </SeatProvider>
   );
 }

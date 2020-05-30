@@ -2,21 +2,35 @@ import React, { useState, useContext } from "react";
 import Seat from "../../components/seat";
 import NavB from "../../components/navB";
 import MovieInfo from "../../components/movieInfo";
+import Seating from "../../components/seating";
 import styles from "../../styles/seats.module.css";
 import { SeatContext } from "../../contexts/seatContext";
 import fetch from "node-fetch";
+import movies from "../../lib/utils";
 
+// export async function getServerSideProps({ params }) {
+//   const res = await fetch(
+//     `https://api.themoviedb.org/3/movie/${params.id}?api_key=574f5934b3cc3bfa874c0a5ce4d88d74&language=en-US`
+//   );
+//   const data = await res.json();
+//   return {
+//     props: { movieData: data },
+//   };
+// }
 export async function getServerSideProps({ params }) {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${params.id}?api_key=574f5934b3cc3bfa874c0a5ce4d88d74&language=en-US`
-  );
-  const data = await res.json();
   return {
-    props: { movieData: data },
+    props: { params },
   };
 }
-
-export default function seats({ movieData }) {
+export default function seats({ params }) {
+  const [isSeats, setSeats] = useState(false);
+  let movieData;
+  movies.forEach((mov) => {
+    if (mov.id === Number(params.id)) {
+      movieData = mov;
+      return;
+    }
+  });
   const { gseats, setGseats } = useContext(SeatContext);
   const [seat, setSeat] = useState(Array(50).fill(false));
   let price = 0;
@@ -56,15 +70,15 @@ export default function seats({ movieData }) {
         overview={movieData ? movieData.overview : ""}
         bd={movieData ? movieData.backdrop_path : ""}
         rating={movieData ? movieData.vote_average : ""}
+        setSeats={setSeats}
       />
-      <div className={styles.theatre}>
-        <div className={styles.screen}></div>
-        <div className={styles.seatgrid}>{divs}</div>
-      </div>
-      <div className={styles.book}>
-        <div className={styles.price}>Cost : {price}</div>
-        <button onClick={handleClick}>Book</button>
-      </div>
+      <Seating
+        setSeats={setSeats}
+        isSeats={isSeats}
+        divs={divs}
+        price={price}
+        hc={handleClick}
+      />
     </div>
   );
 }

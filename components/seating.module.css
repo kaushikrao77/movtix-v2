@@ -1,0 +1,64 @@
+.container {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  background-color: #232323;
+  height: 75vh;
+  width: 60vw;
+  border-radius: 10px;
+}
+.theatre {
+  width: 50vw;
+  border: 1px solid yellow;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.screen {
+  height: 3px;
+  width: 70%;
+  background-color: white;
+  margin: 30px auto;
+}
+.seatgrid {
+  width: 70%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  background-color: #232323;
+  justify-content: center;
+  align-items: center;
+}
+.book {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.price {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+.book button {
+  width: 50%;
+  margin: 5px auto;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  background-color: black;
+  border: 1px solid yellow;
+  cursor: pointer;
+}
+.xp {
+  font-size: 20px;
+  cursor: pointer;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+}
+.x {
+  color: white;
+  text-align: end;
+}

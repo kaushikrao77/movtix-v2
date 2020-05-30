@@ -3,18 +3,21 @@ import Movie from "../components/movie";
 import styles from "../styles/index.module.css";
 import NavB from "../components/navB";
 import fetch from "node-fetch";
+import movie from "../lib/utils";
 
-export async function getStaticProps() {
-  const res = await fetch(
-    "https://api.themoviedb.org/3/movie/now_playing?api_key=574f5934b3cc3bfa874c0a5ce4d88d74&language=en-US&page=1"
-  );
-  const data = await res.json();
-  const fdata = await data.results;
-  return {
-    props: { fmovies: fdata },
-  };
-}
-export default function Home({ fmovies }) {
+// export async function getStaticProps() {
+//   const res = await fetch(
+//     "https://api.themoviedb.org/3/movie/now_playing?api_key=574f5934b3cc3bfa874c0a5ce4d88d74&language=en-US&page=1"
+//   );
+//   const data = await res.json();
+//   const fdata = await data.results;
+//   return {
+//     props: { fmovies: fdata },
+//   };
+// }
+export default function Home() {
+  let fmovies = movie;
+  console.log(fmovies);
   let divs = fmovies
     ? fmovies.map((movie) => {
         return (

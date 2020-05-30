@@ -20,3 +20,12 @@
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
+.text button {
+  background-color: black;
+  padding: 10px 20px;
+  text-align: center;
+  border: 1px solid yellow;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}

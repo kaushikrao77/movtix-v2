@@ -3,6 +3,9 @@ import styles from "./movieInfo.module.css";
 
 export default function MovieInfo(props) {
   let back = `https://image.tmdb.org/t/p/w500${props.bd}`;
+  function handleClick() {
+    props.setSeats(true);
+  }
   return (
     <div className={styles.movieInfo}>
       <div
@@ -12,6 +15,9 @@ export default function MovieInfo(props) {
       <div className={styles.text}>
         <h1>{props.name}</h1>
         <p>{props.overview}</p>
+        <br />
+        <h2>Cost:{props.cost}</h2>
+        <button onClick={handleClick}>Book Tickets</button>
       </div>
     </div>
   );

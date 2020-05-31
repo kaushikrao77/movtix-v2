@@ -18,7 +18,7 @@ export default function Seating({ divs, price, hc, isSeats, setSeats }) {
         <div className={styles.seatgrid}>{divs}</div>
       </div>
       <div className={styles.book}>
-        <div className={styles.price}>Cost : {price}</div>
+        <div className={styles.price}>Cost : {parseInt(price)}</div>
         <button onClick={hc}>Book</button>
       </div>
     </div>

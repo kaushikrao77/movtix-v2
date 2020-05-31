@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./navB.module.css";
+import Link from "next/link";
 
 export default function NavB() {
   return (
     <div className={styles.NavB}>
-      <h1>MovTix</h1>
+      <Link href="/">
+        <h1 style={{ cursor: "pointer" }}>MovTix</h1>
+      </Link>
     </div>
   );
 }

@@ -5,6 +5,7 @@ export default function MovieInfo(props) {
   let back = `https://image.tmdb.org/t/p/w500${props.bd}`;
   function handleClick() {
     props.setSeats(true);
+    props.movieData.update(2);
   }
   return (
     <div className={styles.movieInfo}>
@@ -16,7 +17,7 @@ export default function MovieInfo(props) {
         <h1>{props.name}</h1>
         <p>{props.overview}</p>
         <br />
-        <h2>Cost:{props.cost}</h2>
+        <h2>Cost:{parseInt(props.cost)}</h2>
         <button onClick={handleClick}>Book Tickets</button>
       </div>
     </div>
